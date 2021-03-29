@@ -7,10 +7,6 @@ window.onload=function() {
 	for(var i=0; i<colObj.length; i++)	{
 		colObj[i].addEventListener("click", function()	{
 			userTurn(this);
-		});
-	}
-	for(var i=0; i<colObj.length; i++)	{
-		colObj[i].addEventListener(userTurn(colObj), function()	{
 			computerTurn(this);
 		});
 	}
@@ -27,13 +23,17 @@ function userTurn(colObj)
 }
 
 //function provided. Add parameter(s) if needed
-function computerTurn()
+function computerTurn(colObj)
 {
     //Add code here
-    if(colObj == ""){
-    	colObj.innerHTML = "O";
-	break;
-    }
+	for(var i=0; i<colObj.length; i++)	{
+		if(colObj.innerHTML = "X"){
+			i++;
+		}
+		else{
+			colObj.innerHTML = "O";
+		}
+	}
 	
 	
 }
