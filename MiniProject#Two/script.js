@@ -23,17 +23,19 @@ function userTurn(colObj)
 }
 
 //function provided. Add parameter(s) if needed
-function computerTurn(colObj)
+function computerTurn()
 {
-    //Add code here
+	var colObj = document.getElementsByClassName("col");
 	for(var i=0; i<colObj.length; i++)	{
-		if(colObj.innerHTML = "X"){
-			i++;
+		if(colObj[i].innerHTML == "X" | colObj[i].innerHTML == "O")	{
+			continue;
 		}
-		else{
-			colObj.innerHTML = "O";
+		else	{
+			colObj[i].innerHTML = "O";
+			break;
 		}
 	}
+	//Add code here
 	
 	
 }
