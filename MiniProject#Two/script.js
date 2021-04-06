@@ -10,6 +10,9 @@ window.onload=function() {
 			computerTurn(this);
 		});
 	}
+	document.getElementById("reset").addEventListener("click", function()	{
+		resetGameBoard(this);
+	});
 }
 
 /************** Function area *******************/
@@ -17,8 +20,8 @@ window.onload=function() {
 //function provided. Add parameter(s) if needed
 function userTurn(colObj)
 {
-    //Add code here
     colObj.innerHTML = "X";
+	determineWinner(this);
 
 }
 
@@ -35,8 +38,8 @@ function computerTurn()
 			break;
 		}
 	}
-	//Add code here
 	
+	determineWinner(this);
 	
 }
 
@@ -54,11 +57,21 @@ function determineWinner()
 	for(var i=0; i<winningPos.length; i++)	{
 		if(winningPos.values = "X")
 		{
-			document.write("Player is the winner");
+			document.getElementById("message").innerHTML = "User is the winner!";
 		}
 		else if(winningPos.values = "O")
 		{
-			document.write("Computer is the winner");
+			document.getElementById("message").innerHTML = "Computer is the winner!";
+		}
+		else
+		{
+			document.getElementById("message").innerHTML = "No winner";
+			break;
 		}
 	}
+}
+
+function resetGameBoard()
+{
+	document.getElementsByClassName("col").innerHTML = "";
 }
