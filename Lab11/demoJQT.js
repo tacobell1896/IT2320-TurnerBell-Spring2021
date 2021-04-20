@@ -6,11 +6,11 @@
    //siblings()
    //children()
    
-    //Additional Sibling methods 
-    //next
-    //nextAll
-    //nextUntil   
-     
+   //Additional Sibling methods 
+   //next
+   //nextAll
+   //nextUntil   
+   
    //prev
    //prevAll
    //prevUntil
@@ -63,6 +63,32 @@ $(function(){  //$(document).ready(function(){})
       });
    });
 	$("#button7").on("click",function(){
-		var descendants = $("#content").find("");
+		$("#content").next().append("Sibling set by next() method");
+      $("#content").next().css({"background-color": "yellow"});
+	});
+	$("#button8").on("click",function(){
+		$("#content").prev().append("Sibling set by prev() method");
+      $("#content").prev().css({"background-color": "grey"});
+	});
+	$("#button9").on("click",function(){
+		$("#item1").closest("li").css({"color": "orange"});
+	});
+	$("#button10").on("click",function(){
+		$("li").first().css({"background-color": "red"});
+	});
+
+	$("#button11").on("click",function(){
+		$("li").last().css({"background-color": "red"});
+	});
+
+	$("#button12").on("click",function(){
+		$("li").filter("#item2").css({"background-color": "red"});
+	});
+	$("#button13").on("click",function(){
+		$("li").not("#item2").css({"background-color": "red"});
+	});
+
+	$("#button14").on("click",function(){
+		$("li").slice(1,4).css({"background-color": "red"});
 	});
 })
